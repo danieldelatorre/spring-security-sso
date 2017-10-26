@@ -1,0 +1,41 @@
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.cloud: DEBUG
+    org.springframework.web: WARN
+    
+server:
+  port: 8080
+  
+spring:
+  aop:
+    proxy-target-class: true
+  
+zuul:  
+  routes:    
+    startpage:
+      path: /**
+      url: http://localhost:8081
+    resource:      
+      path: /resource/**
+      url: http://localhost:9001/resource
+    user:
+      path: /user/**
+      url: http://localhost:9999/uaa/user
+
+#Configuration for the SSO
+#This section is also neccessary to get the OAuth2ClientContext used in the PasswordGrantZuulFilter class
+security:
+  oauth2:
+    client:
+      clientId: ui1
+      clientSecret: ui1-secret
+      accessTokenUri: http://localhost:9999/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+      tokenName: oauth_token
+      authenticationScheme: query
+      clientAuthenticationScheme: form
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
+      preferTokenInfo: false  
+  sessions: ALWAYS

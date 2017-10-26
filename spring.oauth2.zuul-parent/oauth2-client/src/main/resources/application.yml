@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+debug: true
+
+spring:
+  aop:
+    proxy-target-class: true
+    
+#Configuration for the SSO
+#This section is also neccessary to get the OAuth2ClientContext
+security:
+  user:
+    password: none
+  oauth2:
+    client:
+      clientId: ui1
+      clientSecret: ui1-secret
+      accessTokenUri: http://localhost:9999/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
+      
+zuul:
+  routes:
+    resource:
+      path: /resource/**
+      url: http://localhost:9001/resource
+    user:
+      path: /user/**
+      url: http://localhost:9999/uaa/user
+      
+logging:
+  level:
+    org.springframework.security: DEBUG

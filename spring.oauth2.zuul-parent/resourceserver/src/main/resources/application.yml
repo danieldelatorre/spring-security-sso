@@ -1,0 +1,14 @@
+server:
+  port: 9001
+  context-path: /resource
+
+security:
+  sessions: NEVER
+
+#the datasource declared in this way is not working
+spring:
+  datasource:
+    url: jdbc:jtds:sqlserver://localhost:1433/uaa;
+    username: uaa
+    password: password
+    driver-class-name: net.sourceforge.jtds.jdbc.Driver
