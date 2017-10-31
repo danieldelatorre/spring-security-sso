@@ -1,4 +1,4 @@
-/*drop table if exists oauth_client_details;
+drop table if exists oauth_client_details;
 create table oauth_client_details (
   client_id VARCHAR(255) PRIMARY KEY,
   resource_ids VARCHAR(255),
@@ -62,4 +62,4 @@ create table if not exists ClientDetails (
   refresh_token_validity INTEGER,
   additionalInformation VARCHAR(4096),
   autoApproveScopes VARCHAR(255)
-);*/
+);

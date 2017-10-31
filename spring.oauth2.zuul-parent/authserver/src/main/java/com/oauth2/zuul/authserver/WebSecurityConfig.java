@@ -2,6 +2,7 @@ package com.oauth2.zuul.authserver;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -22,7 +23,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 //@EnableWebSecurity
 @Order(-20)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
+	
 	@Bean
 	@Override		
 	public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -42,6 +43,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {			
 		http
 			//.formLogin().permitAll()
+		.authorizeRequests()
+		.antMatchers("/revokeToken").permitAll()
+		.and()
 			.formLogin().loginPage("/login").permitAll()
 			.and()
 				.requestMatchers().antMatchers("/login","/oauth/authorize", "/oauth/confirm_access")

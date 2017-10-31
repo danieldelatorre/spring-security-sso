@@ -23,6 +23,9 @@ security:
       
 zuul:
   routes:
+    logout:
+      path: /revokeToken/**
+      url: http://localhost:9999/uaa/revokeToken
     resource:
       path: /resource/**
       url: http://localhost:9001/resource

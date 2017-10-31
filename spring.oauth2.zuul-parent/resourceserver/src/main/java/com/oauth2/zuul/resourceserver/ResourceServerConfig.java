@@ -25,11 +25,11 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
  * @author Filip Lindby
  *
  */
-/*@Configuration
+@Configuration
 @EnableResourceServer
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@PropertySource({ "classpath:persistence.properties" })*/
+@PropertySource({ "classpath:persistence.properties" })
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 	private static final String RESOURCE_ID = "resourceService1";
@@ -61,12 +61,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	/*@Bean
 	public TokenStore tokenStore() {
 		return new InMemoryTokenStore();
-	}
-	
-	/*@Bean
-	public JdbcTokenStore tokenStore() {
-		return new JdbcTokenStore(dataSource);
 	}*/
+	
 	
 	   @Bean
 	    @Primary

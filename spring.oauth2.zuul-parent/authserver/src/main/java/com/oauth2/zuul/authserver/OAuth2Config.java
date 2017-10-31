@@ -32,9 +32,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @author Filip Lindby
  *
  */
-/*@Configuration
+@Configuration
 @EnableAuthorizationServer
-@PropertySource({ "classpath:persistence.properties" })*/
+@PropertySource({ "classpath:persistence.properties" })
 public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
     @Autowired

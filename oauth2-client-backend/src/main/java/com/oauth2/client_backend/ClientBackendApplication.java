@@ -14,9 +14,6 @@ import org.springframework.security.oauth2.common.AuthenticationScheme;
 @SpringBootApplication
 public class ClientBackendApplication {
 
-	@Autowired
-	private OAuth2RestTemplate template;
-	
 	public static void main(String[] args) {
 		SpringApplication.run(ClientBackendApplication.class, args);
 	}

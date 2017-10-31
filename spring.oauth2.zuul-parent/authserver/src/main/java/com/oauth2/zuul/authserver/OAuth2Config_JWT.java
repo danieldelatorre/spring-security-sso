@@ -32,8 +32,8 @@ import org.springframework.web.servlet.view.RedirectView;
  * @author Filip Lindby
  *
  */
-@Configuration
-@EnableAuthorizationServer
+//@Configuration
+//@EnableAuthorizationServer
 public class OAuth2Config_JWT extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
@@ -48,6 +48,7 @@ public class OAuth2Config_JWT extends AuthorizationServerConfigurerAdapter {
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		endpoints.tokenStore(tokenStore()).tokenEnhancer(jwtTokenEnhancer()).authenticationManager(authenticationManager);
 		
+		//logout section 
 		endpoints.addInterceptor(new HandlerInterceptorAdapter() {
 			@Override
 			public void postHandle(HttpServletRequest request,

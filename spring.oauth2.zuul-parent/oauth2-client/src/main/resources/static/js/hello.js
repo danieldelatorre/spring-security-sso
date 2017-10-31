@@ -1,3 +1,19 @@
+/*$( "#logout" ).click(function() {
+	$.ajax({
+	    url : "http://localhost:8081/logout",
+	    type: "POST",
+	    success: function(data, textStatus, jqXHR)
+	    {
+	    	window.location.href = "/";
+	    },
+	    error: function (jqXHR, textStatus, errorThrown)
+	    {
+	    	alert(textStatus);
+	    }
+	});
+
+});*/
+
 angular.module('hello', [ 'ngRoute' ]).config(function($routeProvider, $httpProvider) {
 
 	$routeProvider.when('/', {
@@ -31,12 +47,23 @@ function($rootScope, $http, $location, $route) {
 
 	self.credentials = {};
 
-	self.logout = function() {
+	/*self.logout = function() {
 		$http.post('logout', {}).finally(function() {
 			$rootScope.authenticated = false;
 			$location.path("/");
 		});
-	}
+	}*/
+	
+	$( "#logout" ).click(function() {
+		var res = $http.post('http://localhost:8081/revokeToken');
+		res.success(function(data, status, headers, config) {
+			$rootScope.authenticated = false;
+			$location.path("/");
+		});
+		res.error(function(data, status, headers, config) {
+			alert( "error");
+		});
+	});
 
 }).controller('home', function($http) {
 	var self = this;

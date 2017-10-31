@@ -33,9 +33,9 @@ import org.springframework.util.FileCopyUtils;
  * @author Filip Lindby
  *
  */
-@Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@Configuration
+//@EnableWebSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ResourceServerConfig_JWT extends ResourceServerConfigurerAdapter {
 	
 	@Autowired
