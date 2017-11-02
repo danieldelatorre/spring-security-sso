@@ -6,12 +6,21 @@
 		<groupId>spring.oauth2.zuul</groupId>
 		<artifactId>spring.oauth2.zuul-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../spring.oauth2.zuul-parent</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>authserver</artifactId>
 	<packaging>jar</packaging>
+	<version>0.0.1</version>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+	
 	<name>authserver</name>
 	<description>Authorization Server</description>
 	<dependencies>

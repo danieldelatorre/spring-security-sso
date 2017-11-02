@@ -7,14 +7,24 @@
 		<groupId>spring.oauth2.zuul</groupId>
 		<artifactId>spring.oauth2.zuul-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	
 	<artifactId>resourceserver</artifactId>
 	<packaging>jar</packaging>
-
+	<version>0.0.1</version>
+	
 	<name>resource-server</name>
 	<description>Demo project for Spring Boot</description>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -43,4 +53,13 @@
 		</dependency>
 	</dependencies>
 	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
