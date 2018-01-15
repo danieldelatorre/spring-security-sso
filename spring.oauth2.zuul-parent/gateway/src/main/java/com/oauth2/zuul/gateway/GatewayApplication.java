@@ -34,7 +34,7 @@ import org.springframework.web.util.WebUtils;
 
 /**
  * API Gateway 
- * @author Filip Lindby
+ * @author Daniel de la torre
  *
  */
 @SpringBootApplication

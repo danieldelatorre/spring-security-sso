@@ -22,7 +22,7 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 
 /**
  * 
- * @author Filip Lindby
+ * @author Daniel de la Torre
  *
  */
 @Configuration

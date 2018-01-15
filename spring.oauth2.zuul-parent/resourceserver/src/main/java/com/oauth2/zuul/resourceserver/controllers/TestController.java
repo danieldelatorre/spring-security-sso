@@ -2,6 +2,7 @@ package com.oauth2.zuul.resourceserver.controllers;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 
- * @author Filip Lindby
+ * @author Daniel de la Torre
  *
  */
 @RestController

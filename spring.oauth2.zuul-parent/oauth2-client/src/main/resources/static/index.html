@@ -19,6 +19,8 @@
 			<li ng-class="{active:nav.tab('home')}"><a href="#/">home</a></li>
 			<li ng-class="{active:nav.tab('navigation')}"><a href="login">login</a></li>
 			<li ng-show="authenticated"><a id="logout">logout</a></li>
+			<li ng-class="{active:nav.tab('navigation')}"><a href="/resource/test">Protected Resource</a></li>
+			<li ng-class="{active:nav.tab('navigation')}"><a href="/resource/demo">Unprotected Resource</a></li>
 		</ul>
 	</div>
 	<div ng-view class="container"></div>

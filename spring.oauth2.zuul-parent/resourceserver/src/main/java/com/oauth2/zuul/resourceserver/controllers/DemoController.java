@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 
- * @author Filip Lindby
+ * @author Daniel de la Torre
  *
  */
 @RestController

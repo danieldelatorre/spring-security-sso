@@ -40,7 +40,7 @@ public class CustomPostZuulFilter extends ZuulFilter {
         try {
             final InputStream is = ctx.getResponseDataStream();
             String responseBody = IOUtils.toString(is, "UTF-8");
-            if (responseBody.contains("refresh_token")) {
+            /*if (responseBody.contains("refresh_token")) {
                 final Map<String, Object> responseMap = mapper.readValue(responseBody, new TypeReference<Map<String, Object>>() {
                 });
                 final String refreshToken = responseMap.get("refresh_token").toString();
@@ -56,7 +56,7 @@ public class CustomPostZuulFilter extends ZuulFilter {
 				ctx.getResponse().addCookie(cookie);
                 logger.info("refresh token = " + refreshToken);
 
-            }
+            }*/
             if (requestURI.contains("revokeToken") && requestMethod.equals("POST")) {
             	HttpSession session = ctx.getRequest().getSession(false);
             	if(session!=null) {

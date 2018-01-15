@@ -16,3 +16,6 @@ sudo docker inspect container_ID
 #Once the docker container is started and we have the container IP we have to modify the jdbc.url in the persistence.properties(authserver and the resourceserver)rin
 jdbc.url=jdbc:mysql://ip_docker_container:3306/oauth2test?createDatabaseIfNotExist=true
 
+#To restart the container
+sudo docker container start CONTAINER_ID
+

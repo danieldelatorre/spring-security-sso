@@ -2,6 +2,8 @@ package com.oauth2.client.controller;
 
 import java.util.Arrays;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
@@ -13,17 +15,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/client")
 public class TestController {
 	
 	//@Autowired
 	private OAuth2RestTemplate template;
 	
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public String getTestResource() {
+	public String getTestResource(HttpServletRequest request) {
 	 
 		//resource server http://localhost:9001/resource/test
 		//Zuul proxy http://localhost:8080/resource/test
+		request.getSession(false);
 		String s = template.getForObject("http://localhost:9001/resource/test", String.class);
 		return s;
 	}

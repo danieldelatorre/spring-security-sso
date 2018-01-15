@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2RefreshToken;
@@ -28,6 +29,7 @@ public class TokenController {
     @RequestMapping(method = RequestMethod.POST, value = "/revokeToken")
     @ResponseBody
     public void revokeToken(HttpServletRequest request) {
+  
         String authorization = request.getHeader("Authorization");
         if (authorization != null && authorization.contains("bearer")) {
             String tokenId = authorization.substring("Bearer".length() + 1);
@@ -35,7 +37,7 @@ public class TokenController {
         }
     }
     
-    @RequestMapping(method = RequestMethod.GET, value = "/refresh_token")
+    /*@RequestMapping(method = RequestMethod.GET, value = "/refresh_token")
     @ResponseBody
     public String getRefreshToken(HttpServletRequest request) {
         
@@ -47,5 +49,5 @@ public class TokenController {
         }
        
        return null;
-    }
+    }*/
 }

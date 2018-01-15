@@ -30,7 +30,7 @@ import org.springframework.util.FileCopyUtils;
 
 /**
  * 
- * @author Filip Lindby
+ * @author Daniel de la Torre
  *
  */
 //@Configuration

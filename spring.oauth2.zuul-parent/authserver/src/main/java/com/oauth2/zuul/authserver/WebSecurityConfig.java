@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 /**
  * 
- * @author Filip Lindby
+ * @author Daniel de la Torre
  *
  */
 @Configuration

@@ -23,6 +23,7 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+//the access token sent by the auth server, it will be stored in session.
 @EnableOAuth2Sso
 @EnableZuulProxy
 public class ClientApplication extends WebSecurityConfigurerAdapter{
@@ -43,7 +44,7 @@ public class ClientApplication extends WebSecurityConfigurerAdapter{
 		http
 			.logout().logoutSuccessUrl("/").and()
 			.authorizeRequests()
-				.antMatchers("/index.html", "/home.html", "/", "/login").permitAll()
+				.antMatchers("/index.html", "/home.html", "/", "/login","/resource/demo").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.csrf()
